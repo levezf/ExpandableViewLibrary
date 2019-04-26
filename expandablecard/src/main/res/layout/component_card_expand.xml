@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:expandable="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cv_header"
+        expandable:cardElevation="2dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="56dp">
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:id="@+id/iv_icon"
+                    android:layout_width="24dp"
+                    android:scaleType="centerInside"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="16dp"
+                    expandable:layout_constraintStart_toStartOf="parent"
+                    expandable:layout_constraintBottom_toBottomOf="parent"
+                    expandable:layout_constraintTop_toTopOf="parent" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/tv_title"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:textSize="15sp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:gravity="center_vertical|start"
+                    expandable:layout_constraintEnd_toStartOf="@+id/card_image"
+                    expandable:layout_constraintStart_toEndOf="@+id/iv_icon"/>
+
+
+                <android.support.v7.widget.CardView
+                    expandable:cardElevation="0dp"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    expandable:cardCornerRadius="20dp"
+                    android:id="@+id/card_image"
+                    android:layout_marginEnd="16dp"
+                    android:padding="12dp"
+                    expandable:layout_constraintBottom_toBottomOf="parent"
+                    expandable:layout_constraintEnd_toEndOf="parent"
+                    expandable:layout_constraintTop_toTopOf="parent">
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:background="?android:selectableItemBackground"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:id="@+id/btn_expand"
+                        android:layout_gravity="center"
+                        android:scaleType="centerInside"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                </android.support.v7.widget.CardView>
+
+            </android.support.constraint.ConstraintLayout>
+
+            <FrameLayout
+                android:id="@+id/child_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

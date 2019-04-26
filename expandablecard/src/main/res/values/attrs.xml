@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="ExpandableView">
+        <attr name="drawable_indicator"             format="reference"  />
+        <attr name="title_header"                   format="string"     />
+        <attr name="child_layout"                   format="reference"  />
+        <attr name="icon"                           format="reference"  />
+        <attr name="title_header_color"             format="color"      />
+        <attr name="icon_color"                     format="color"      />
+        <attr name="drawable_indicator_color"       format="color"      />
+        <attr name="animation"                      format="boolean"    />
+        <attr name="start_expanded"                 format="boolean"    />
+        <attr name="header_clickable"               format="boolean"    />
+        <attr name="header_color"                   format="reference"    />
+    </declare-styleable>
+
+
+</resources>
