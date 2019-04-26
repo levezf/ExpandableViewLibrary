@@ -69,7 +69,7 @@ Example:
             app:drawable_indicator_color="@android:color/white"
             app:header_color="@color/colorAccent"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"/>
 ```
 
 The only required attributes are:
