@@ -52,6 +52,7 @@ Example:
 ```
 <com.levez.expandablecard.ExpandableView
             android:id="@+id/expandableview"
+            app:header_elevation="4dp"
             app:icon="@drawable/ic_android_black_24dp"
             app:title_header="Android teste Expandable"
             app:animation="true"
