@@ -15,6 +15,7 @@ import android.support.v7.widget.AppCompatImageView;
 import android.support.v7.widget.AppCompatTextView;
 import android.support.v7.widget.CardView;
 import android.util.AttributeSet;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
@@ -26,7 +27,7 @@ import static com.levez.expandablecard.AnimationUtils.expand;
 /**
  * ExpandableView - This class is used as a custom view for displaying expansive cards.
  * @author  Felipe Levez
- * @version 0.1.0
+ * @version 0.1.1
  * @see FrameLayout
  * @see android.view.ViewGroup
  */
@@ -73,6 +74,7 @@ public class ExpandableView extends FrameLayout implements View.OnClickListener 
     private boolean mIsAnimation;
     private boolean mStartExpanded;
     private boolean mHeaderClickable;
+    private float mHeaderElevation;
 
     @ColorRes
     private int mTitleHeaderColor;
@@ -137,6 +139,7 @@ public class ExpandableView extends FrameLayout implements View.OnClickListener 
         mStartExpanded           = typedArray.getBoolean    ( R.styleable.ExpandableView_start_expanded           ,false );
         mHeaderClickable         = typedArray.getBoolean    ( R.styleable.ExpandableView_header_clickable         ,false );
         mTitle                   = typedArray.getString     ( R.styleable.ExpandableView_title_header                            );
+        mHeaderElevation         = typedArray.getDimension  ( R.styleable.ExpandableView_header_elevation         ,1     );
 
 
         typedArray.recycle();
@@ -157,6 +160,8 @@ public class ExpandableView extends FrameLayout implements View.OnClickListener 
      * Sets initial layout values.
      */
     private void setLayoutValues() {
+
+        setHeaderElevation(mHeaderElevation);
 
         mTextViewTitle.setText(mTitle);
 
@@ -415,6 +420,14 @@ public class ExpandableView extends FrameLayout implements View.OnClickListener 
     }
 
     /**
+     * Returns the header elevation.
+     * @return Header elevation
+     */
+    public float getHeaderElevation() {
+        return mHeaderElevation;
+    }
+
+    /**
      * Change the status of the item (expanded / collapsed).
      * @param isExpand A boolean (true -> expanded / false -> collapsed)
      */
@@ -531,5 +544,24 @@ public class ExpandableView extends FrameLayout implements View.OnClickListener 
         mHeader.setBackgroundColor(getResources().getColor(mHeaderColor));
         findViewById(R.id.card_image).getBackground().setColorFilter(getResources().getColor(mHeaderColor), PorterDuff.Mode.SRC_IN);
 
+    }
+
+    /**
+     * Change the header elevation
+     * @param headerElevation An object of the type float - value in dp
+     */
+    private void setHeaderElevation(float headerElevation) {
+        mHeaderElevation = headerElevation;
+        mHeader.setCardElevation(getPixelsFromDPs(mHeaderElevation));
+    }
+
+    /**
+     * This function performs the conversion of dp to pixels.
+     * @param dp Value in dp
+     * @return The value, in pixels, of the value passed by parameter in dp
+     */
+    private int getPixelsFromDPs(float dp){
+        return (int) (TypedValue.applyDimension(
+                TypedValue.COMPLEX_UNIT_DIP, dp, getContext().getResources().getDisplayMetrics()));
     }
 }

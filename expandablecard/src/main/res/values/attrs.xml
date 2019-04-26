@@ -12,7 +12,8 @@
         <attr name="animation"                      format="boolean"    />
         <attr name="start_expanded"                 format="boolean"    />
         <attr name="header_clickable"               format="boolean"    />
-        <attr name="header_color"                   format="reference"    />
+        <attr name="header_color"                   format="reference"  />
+        <attr name="header_elevation"               format="dimension"  />
     </declare-styleable>
 
 
