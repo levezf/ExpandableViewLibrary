@@ -2,6 +2,11 @@
 
 A library for creating expansive components/cards.
 
+<img src= "https://user-images.githubusercontent.com/34388096/56818835-e01fd180-681e-11e9-94c4-2cab61a2dbd1.png"
+  width=300 heigth=500/>
+<img src= "https://user-images.githubusercontent.com/34388096/56818877-fded3680-681e-11e9-9385-242d8d262c46.png"
+  width=300 heigth=500/>
+
 ## Adding ExpandableViewLibrary to your build
 
 To add a dependency on TaskLibrary using Maven, use the following:
@@ -104,3 +109,4 @@ expandable.setOnChangeStateListener(new ExpandableView.OnChangeStateListener() {
 });
 [...]
 ```
+
