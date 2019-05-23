@@ -25,7 +25,7 @@ Step 2 - Add the dependency
 <dependency>
   <groupId>com.github.levezf</groupId>
   <artifactId>ExpandableViewLibrary</artifactId>
-  <version>0.1.1</version>
+  <version>0.1.2</version>
 </dependency>
 ```
 To add a dependency using Gradle:
@@ -42,7 +42,7 @@ allprojects {
 Step 2 - Add the dependency
 ```
 dependencies {
-    implementation 'com.github.levezf:ExpandableViewLibrary:0.1.1'
+    implementation 'com.github.levezf:ExpandableViewLibrary:0.1.2'
 }
 ```
 ## Usage
