@@ -2,6 +2,11 @@
 
 A library for creating expansive components/cards.
 
+<img src= "https://user-images.githubusercontent.com/34388096/56818835-e01fd180-681e-11e9-94c4-2cab61a2dbd1.png"
+  width=300 heigth=500/>
+<img src= "https://user-images.githubusercontent.com/34388096/56818877-fded3680-681e-11e9-9385-242d8d262c46.png"
+  width=300 heigth=500/>
+
 ## Adding ExpandableViewLibrary to your build
 
 To add a dependency on TaskLibrary using Maven, use the following:
@@ -20,7 +25,7 @@ Step 2 - Add the dependency
 <dependency>
   <groupId>com.github.levezf</groupId>
   <artifactId>ExpandableViewLibrary</artifactId>
-  <version>0.1.0</version>
+  <version>0.1.1</version>
 </dependency>
 ```
 To add a dependency using Gradle:
@@ -37,7 +42,7 @@ allprojects {
 Step 2 - Add the dependency
 ```
 dependencies {
-    implementation 'com.github.levezf:ExpandableViewLibrary:0.1.0'
+    implementation 'com.github.levezf:ExpandableViewLibrary:0.1.1'
 }
 ```
 ## Usage
@@ -64,7 +69,7 @@ Example:
             app:drawable_indicator_color="@android:color/white"
             app:header_color="@color/colorAccent"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"/>
 ```
 
 The only required attributes are:
@@ -104,3 +109,4 @@ expandable.setOnChangeStateListener(new ExpandableView.OnChangeStateListener() {
 });
 [...]
 ```
+
